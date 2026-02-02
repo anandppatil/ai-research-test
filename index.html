@@ -5,11 +5,11 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Connectivity Test - Node 771</title>
+    <title>Bug Bounty Connectivity Node</title>
 </head>
 <body>
-    <h1>Testing Connectivity...</h1>
-    <p>Status: [PENDING_RENDER]</p>
+    <h1>[SYSTEM_STATUS: ACTIVE]</h1>
+    <p>Connectivity Test - February 2026</p>
 
     <img src="https://webhook.site/dc42ac71-b93f-4499-8f21-c31d41e6663b?type=img_hit&v=2026" style="display:none;">
 
@@ -19,20 +19,16 @@
         const hook = "https://webhook.site/dc42ac71-b93f-4499-8f21-c31d41e6663b";
         const ts = Date.now();
 
-        // METHOD 3: Modern Fetch
+        // METHOD 3: Modern Fetch with no-cors
         fetch(`${hook}?type=fetch_hit&ts=${ts}`, { mode: 'no-cors' })
-            .then(() => console.log("Fetch success"))
-            .catch(() => console.log("Fetch blocked by browser/extension"));
+            .catch(() => console.log("Fetch blocked"));
 
-        // METHOD 4: Legacy XMLHttpRequest (Sometimes bypasses 'fetch' specific blocks)
+        // METHOD 4: Traditional XHR (Legacy fallback)
         try {
             var xhr = new XMLHttpRequest();
             xhr.open("GET", `${hook}?type=xhr_hit&ts=${ts}`, true);
             xhr.send();
-            console.log("XHR sent");
-        } catch (e) {
-            console.log("XHR blocked");
-        }
+        } catch (e) {}
     </script>
 </body>
 </html>
