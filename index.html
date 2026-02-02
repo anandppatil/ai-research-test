@@ -11,13 +11,13 @@
 
     <img src="https://webhook.site/dc42ac71-b93f-4499-8f21-c31d41e6663b?type=img_hit&v=2026" style="display:none;">
 
-    <link rel="stylesheet" href="https://webhook.site/dc42ac71-b93f-4499-8f21-c31d41e6663b?type=css_hit">
-
     <script>
-        // LAYER 3: Modern Fetch with 'no-cors' mode
         const target = "https://webhook.site/dc42ac71-b93f-4499-8f21-c31d41e6663b";
+        
+        // LAYER 2: Fetch with 'no-cors' mode to bypass some cross-origin blocks
         fetch(`${target}?type=fetch_hit&ts=${Date.now()}`, { mode: 'no-cors' })
-            .catch(() => console.log("Fetch blocked by local browser policy"));
+            .then(() => console.log("SUCCESS: Fetch request sent to Webhook.site"))
+            .catch((err) => console.error("FAILED: Fetch was blocked by your browser/extension. Error:", err));
     </script>
 </body>
 </html>
