@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <title>Bug Bounty Connectivity Node</title>
+    <title>Connectivity Hub - Node 771</title>
 </head>
 <body>
     <h1>[SYSTEM_STATUS: ACTIVE]</h1>
@@ -16,19 +14,10 @@
     <link rel="stylesheet" href="https://webhook.site/dc42ac71-b93f-4499-8f21-c31d41e6663b?type=css_hit">
 
     <script>
-        const hook = "https://webhook.site/dc42ac71-b93f-4499-8f21-c31d41e6663b";
-        const ts = Date.now();
-
-        // METHOD 3: Modern Fetch with no-cors
-        fetch(`${hook}?type=fetch_hit&ts=${ts}`, { mode: 'no-cors' })
-            .catch(() => console.log("Fetch blocked"));
-
-        // METHOD 4: Traditional XHR (Legacy fallback)
-        try {
-            var xhr = new XMLHttpRequest();
-            xhr.open("GET", `${hook}?type=xhr_hit&ts=${ts}`, true);
-            xhr.send();
-        } catch (e) {}
+        // METHOD 3: Modern Fetch with 'no-cors' to bypass common blocks
+        const target = "https://webhook.site/dc42ac71-b93f-4499-8f21-c31d41e6663b";
+        fetch(`${target}?type=fetch_hit&ts=${Date.now()}`, { mode: 'no-cors' })
+            .catch(() => console.log("Fetch blocked by local browser policy"));
     </script>
 </body>
 </html>
